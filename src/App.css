@@ -1,38 +1,117 @@
 .App {
+  background-image: linear-gradient(45deg, #b010c2, #896bc1 36%, #4789b0);
+}
+
+/* text-align: center;：使得 .App 中的文本在水平方向上居中对齐。
+display: flex;：使用 Flex 布局方式。
+min-height: 100vh;：设置 .App 的最小高度为视口高度（viewport height）。
+align-items: center;：在交叉轴（Cross Axis）上居中对齐 Flex 容器中的项目。
+justify-content: center;：在主轴（Main Axis）上居中对齐 Flex 容器中的项目。
+background-image: linear-gradient(45deg, #0b7f87, #59baaa 36%, #4ddb62);：设置 .App 的背景为一个渐变颜色。其中，linear-gradient() 函数指定了一个从左上角到右下角的渐变色，起始颜色为 #0b7f87，中间颜色为 #59baaa（位置为 36%），结束颜色为 #4ddb62。
+*/
+
+.App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-size: 400% 400%;
+  animation: slide 10s linear infinite;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes slide {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+h2 {
+  color: #fff;
+}
+
+.auth-form-container,
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+@media screen and (min-width: 600px) {
+  .auth-form-container {
+    padding: 2rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0.5rem;
   }
 }
+
+label {
+  text-align: left;
+  padding: 0.25rem 0;
+  color: #fff;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+}
+
+button {
+  border: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #cb11d5;
+}
+
+.link-btn {
+  background-color: #fff;
+  background: none;
+  color: #acacac;
+  text-decoration: underline;
+}
+
+footer {
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  align-items: bottom;
+}
+
+/* 可以通过CSS中的position属性来实现版权信息在页面右下角的布局，具体实现方式如下：
+  .footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    font-size: 12px;
+    text-align: right;
+  }  
+*/
+
+/* 
+  Flex 布局方式：一种用于页面布局的 CSS3 弹性盒模型
+    通过为容器设置 display: flex 属性，可以使容器内的子元素实现弹性伸缩，并能够通过设置各个子元素的宽度、高度、间距等属性来实现各种不同的布局方式。
+
+  display: 设置为 flex 时表示使用 Flex 布局方式；
+  flex-direction: 定义了主轴的方向，可取值包括 row、row-reverse、column 和 column-reverse；
+  justify-content: 定义了在主轴上如何对齐子元素，可取值包括 flex-start、flex-end、center、space-between 和 space-around 等；
+  align-items: 定义了在交叉轴上如何对齐子元素，可取值包括 flex-start、flex-end、center、baseline 和 stretch 等；
+  flex-grow、flex-shrink 和 flex-basis: 用于设置子元素在可用空间中的伸缩比例；
+  order: 定义子元素的排列顺序。
+  
+*/
