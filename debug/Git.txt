@@ -1,0 +1,115 @@
+一、clone Repository
+clone Github 上的Repository，如下：
+
+git clone git@github.com:FBing/design-patterns.git
+1
+二、管理分支
+1、查看分支
+A、查看本地分支
+使用 git branch命令，如下：
+
+$ git branch
+* master
+1
+2
+*标识的是你当前所在的分支。
+
+B、查看远程分支
+命令如下：
+
+git branch -r
+1
+C、查看所有分支
+命令如下：
+
+git branch -a
+1
+2、本地创建新的分支
+命令如下：
+
+git branch [branch name]
+1
+例如：
+
+git branch gh-dev
+1
+3、切换到新的分支
+命令如下：
+
+git checkout [branch name]
+1
+例如：
+
+$ git checkout gh-dev
+Switched to branch 'gh-dev'
+1
+2
+4、创建+切换分支
+创建分支的同时切换到该分支上，命令如下：
+
+git checkout -b [branch name]
+1
+git checkout -b [branch name] 的效果相当于以下两步操作：
+
+git branch [branch name]
+git checkout [branch name]
+1
+2
+5、将新分支推送到github
+命令如下：
+
+git push origin [branch name]
+1
+例如：
+
+git push origin gh-dev
+1
+6、删除本地分支
+命令如下：
+
+git branch -d [branch name]
+1
+例如：
+
+git branch -d gh-dev
+1
+7、删除github远程分支
+命令如下：
+
+git push origin :[branch name]
+1
+分支名前的冒号代表删除。
+例如：
+
+git push origin :gh-dev
+1
+三、git提交本地代码到新分支
+1、切换到新的分支
+命令如下：
+
+git checkout [branch name]
+1
+例如：
+
+$ git checkout gh-dev
+Switched to branch 'gh-dev'
+1
+2
+2、添加本地需要提交代码
+命令如下：
+
+git add .
+1
+3、提交本地代码
+命令如下：
+
+git commit -m "add my code to new branchB"
+1
+4、push 到git仓库
+命令如下：
+
+git push origin [branch name]
+1
+例如：
+
+git push origin gh-dev
